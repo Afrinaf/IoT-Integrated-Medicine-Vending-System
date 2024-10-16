@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prescription</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-database-compat.js"></script>
+</head>
+<body>
+    <br/>
+	<center><h1>Prescription</h1></center>
+    <br/>
+    <div class="container" width="500px" style="background-color:#ccccff; height: 600px;">
+        <div class="form-wrapper">
+           <div class="inner">
+            <br/>
+             <h2>Patient  Details </h2>
+             
+             ID: <input type="text" id="id" name="id" value={{id}}>
+             Name:<input type="text" id="name" name="name" value={{ details['name'] }}>
+             Age:<input type="number" id="age" name="age" value= {{ details['age'] }}>
+             Gender:<input type="text" id="gen" name="gen" value= {{ details['gender'] }}>
+           </div>
+         </div>
+         <br/>
+         
+	<table id="prescription">
+		<thead>
+			<tr>
+				<th>Medicine Name</th>
+				<th>Morning</th>
+				<th>Afternoon</th>
+				<th>Evening</th>
+				<th>Night</th>
+				<th>BF/AF</th>
+				<th>Days</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="text" name="medicine_name"></td>
+				<td><select name="morning"><option value="0">0</option><option value="1">1</option><option value="0.5">1/2</option></select></td>
+				<td><select name="afternoon"><option value="0">0</option><option value="1">1</option><option value="0.5">1/2</option></select></td>
+				<td><select name="evening"><option value="0">0</option><option value="1">1</option><option value="0.5">1/2</option></select></td>
+				<td><select name="night"><option value="0">0</option><option value="1">1</option><option value="0.5">1/2</option></select></td>
+				<td><input type="checkbox" name="bf_af" value="BF">BF<input type="checkbox" name="bf_af" value="AF">AF</td>
+				<td><input type="text" name="days"></td>
+				<td><button type="button" onclick="addRow()">Add Row</button></td>
+			</tr>
+		</tbody>
+	</table>
+    <br/>
+	<button type="button" onclick="saveToFirebase()">Save</button>
+	<script>
+        var firebaseConfig={
+            apiKey: "AIzaSyBiMXOZBCkMIr8dghKaIWQGjymeuKhZo2Y",
+            authDomain: "hospitaldb-53979.firebaseapp.com",
+            databaseURL: "https://hospitaldb-53979-default-rtdb.firebaseio.com/",
+            projectId: "hospitaldb-53979",
+            storageBucket: "hospitaldb-53979.appspot.com",
+            messagingSenderId: "753953971822",
+            appId: "1:753953971822:web:2c89cd7ae09cb562cdd07f",
+            measurementId: "G-3MNWJZF9"
+        };
+        firebase.initializeApp(firebaseConfig);
+        
+        var database = firebase.database();
+        console.log(database);
+        function addRow() {
+            const prescriptionTable = document.getElementById("prescription").getElementsByTagName('tbody')[0];
+            const newRow = prescriptionTable.insertRow(-1);
+            const medicineNameCell = newRow.insertCell(0);
+            const morningCell = newRow.insertCell(1);
+            const afternoonCell = newRow.insertCell(2);
+            const eveningCell = newRow.insertCell(3);
+            const nightCell = newRow.insertCell(4);
+            const bfAfCell = newRow.insertCell(5);
+            const daysCell = newRow.insertCell(6);
+
+            medicineNameCell.innerHTML ='<input type="text" name="medicine_name">';
+            morningCell.innerHTML = '<select name="morning"><option value="0">0</option><option value="1">1</option><option value="0.5">1/2</option></select>';
+            afternoonCell.innerHTML = '<select name="afternoon"><option value="0">0</option><option value="1">1</option><option value="0.5">1/2</option></select>';
+            eveningCell.innerHTML = '<select name="evening"><option value="0">0</option><option value="1">1</option><option value="0.5">1/2</option></select>';
+            nightCell.innerHTML = '<select name="night"><option value="0">0</option><option value="1">1</option><option value="0.5">1/2</option></select>';
+            bfAfCell.innerHTML = '<input type="checkbox" name="bf_af" value="BF">BF<input type="checkbox" name="bf_af" value="AF">AF';
+            daysCell.innerHTML = '<input type="text" name="days">';
+        }
+
+            function saveToFirebase() {
+                const prescriptionTable = document.getElementById("prescription");
+                const rows = prescriptionTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+                const prescriptionData = {};
+            
+                for (let i = 0; i < rows.length; i++) {
+                    const cells = rows[i].getElementsByTagName('td');
+                    const medicineName = cells[0].getElementsByTagName('input')[0].value;
+                    var mname = medicineName;
+                    const morning = cells[1].getElementsByTagName('select')[0].value;
+                    const afternoon = cells[2].getElementsByTagName('select')[0].value;
+                    const evening = cells[3].getElementsByTagName('select')[0].value;
+                    const night = cells[4].getElementsByTagName('select')[0].value;
+                    const bfAf = Array.from(cells[5].getElementsByTagName('input')).map(input => input.checked ? input.value : null).filter(Boolean);
+                    const days = cells[6].getElementsByTagName('input')[0].value;
+            
+                    const medicineData = {
+                        
+                        "Morning": morning,
+                        "Afternoon": afternoon,
+                        "Evening": evening,
+                        "Night": night,
+                        "BF_AF": bfAf,
+                        "Days": days
+                    };
+            
+                    prescriptionData[medicineName] = medicineData;
+                }
+                var id = document.getElementById('id').value;
+                var name = document.getElementById('name').value;
+                var age = document.getElementById('age').value;
+                var gender = document.getElementById('gen').value;
+                console.log(id);
+
+                console.log(mname);
+                var databaseRef = firebase.database().ref();
+                var prescriptionRef = databaseRef.child("prescription");
+                var childRef = prescriptionRef.child(id);
+                var detailsRef = childRef.child("Details").update({
+                    name: name,
+                    age: age,
+                    gender: gender
+                    
+                 });
+                var details = childRef.child("Details");
+                var currentDate = new Date().toISOString().slice(0, 10);
+                var dateref = details.child(currentDate).update(prescriptionData)
+               
+                
+                .then(() => {
+                    alert("Prescription data saved to Firebase!");
+                })
+                .catch((error) => {
+                    console.error("Error saving prescription data to Firebase: ", error);
+                });
+
+                
+                
+                
+            }
+
+    </script>
+</body>
+</html>

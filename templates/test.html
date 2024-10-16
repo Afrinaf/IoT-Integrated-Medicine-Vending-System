@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prescription Details</title>
+    <link href="static/bootstrap-5/bootstrap.min.css" rel="stylesheet" />
+    <script src="static/bootstrap-5/bootstrap.bundle.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>prescription</title>
+  </head>
+  <body
+    background="Registration Form\Image.jpeg"
+    style="background-repeat: no-repeat; background-size: cover"
+  >
+    <style>
+      .col {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        width: 500px;
+      }
+    </style>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div
+      class="container"
+      width="200px"
+      style="background-color: #ccccff; height: 400px; width: 800px"
+    >
+      <div class="form-wrapper">
+        <div class="inner">
+          <br /><br />
+          <center>
+            <h2>Welcome to Medicine Vending Machine</h2>
+          </center>
+          <br /><br />
+          <br />
+          <center>
+            <form id="form" method="POST" action="/">
+              <br />
+              <div class="col">
+                <input
+                  type="text"
+                  id="tag_number"
+                  name="tag_number"
+                  value="{{tag_number}}"
+                />
+                <input
+                  type="date"
+                  placeholder="id"
+                  id="date"
+                  name="date"
+                  class="form-control"
+                />
+                <button type="submit" name="submit" class="btn btn-primary">
+                  submit
+                </button>
+              </div>
+            </form>
+          </center>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Send GET request to Flask server to get RFID tag number
+        fetch("http://192.168.100.231:5000/tag", {
+          method: "POST",
+          mode: "cors",
+          body: JSON.stringify({ tag_number: tag_number }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            var tagNumber = data.tag_number;
+
+            // Update input field with tag number
+            document.querySelector("#tag_number").value = tagNumber;
+          })
+          .catch((error) =>
+            console.error("Failed to get RFID tag number:", error)
+          );
+      });
+    </script>
+  </body>
+</html>

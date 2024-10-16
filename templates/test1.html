@@ -1,0 +1,65 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<h1>Payment Details</h1>
+    <p>Amount to be paid: {{ amount }} INR</p>
+    <div id="rzp-button-container"></div>
+    
+    <button id="rzp-button1">Pay</button>
+     
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        var options = {
+            "key": "rzp_test_H0KqHhdAvOGByu",
+            "amount": "{{ amount }}00",
+            "currency": "INR",
+            "name": "{{ name }}",
+            "description": "Payment for prescription",
+            "image": "",
+            "order_id": "{{ order_id }}",
+            "handler": 
+            function pay(response) {
+               // Send data to server
+               var xhr = new XMLHttpRequest();
+               xhr.open("POST", "/paymentinfo", true);
+               xhr.setRequestHeader("Content-Type", "application/json");
+
+              
+               var data = JSON.stringify({
+                   status: "1",
+                   id: "{{ id }}",
+                   date: "{{ date }}"
+               });
+
+               
+               xhr.send(data);
+            },
+            
+            "prefill": { 
+                "name": "{{ name }}",
+                "email": "{{ email }}",
+                "contact": "{{ mobile }}"
+            },
+            "notes": {
+                "email": "{{ email }}",
+                "mobile": "{{ mobile }}"
+            },
+            "theme": {
+                "color": "#F37254"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        console.log(rzp1);
+        rzp1.on('payment.failed', function pay(response){
+            alert(response.error.code);
+            alert(response.error.description);
+            alert(response.error.source);
+            alert(response.error.step);
+            alert(response.error.reason);
+            alert(response.error.metadata.order_id);
+            alert(response.error.metadata.payment_id);
+        });
+        document.getElementById('rzp-button1').onclick = function pay(e){
+            rzp1.open();
+            e.preventDefault();
+        }
+    </script>
+

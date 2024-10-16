@@ -1,0 +1,509 @@
+{
+  "medicines": {
+    "Amoxicillin": 5,
+    "Aptiom": 15,
+    "Ibuprofen": 20,
+    "Paracetamol": 10,
+    "amoxicillin": 5,
+    "aptiom": 15,
+    "ibuprofen": 20,
+    "paracetamol": 10
+  },
+  "patients": [
+    {
+      "DOB": "02/10/2001",
+      "RFID": "101",
+      "address": "123 Main St",
+      "age": 21,
+      "contact_number": "7845389023",
+      "gender": "Male",
+      "name": "John ",
+      "patient_id": 1,
+      "reg_date": "02/05/2023"
+    },
+    {
+      "DOB": "03/20/2013",
+      "address": "12th middle St",
+      "age": 9,
+      "contact_number": "893467975",
+      "gender": "Female",
+      "name": "Ayan",
+      "patient_id": 2,
+      "reg_date": "02/05/2023"
+    },
+    {
+      "DOB": "06/03/2003",
+      "address": "12th st ",
+      "age": 20,
+      "contact_number": "6458934655",
+      "gender": "Female",
+      "name": "priya",
+      "patient_id": 3,
+      "reg_date": "02/10/2023"
+    },
+    {
+      "Blood_Group": " B-",
+      "DOB": "02/23/2023",
+      "Email": "user8@gmail.com",
+      "RFID": "347",
+      "address": "49/109 Attakulam Street kadayanallur",
+      "age": 0,
+      "contact_number": "7373532412",
+      "gender": "Female",
+      "name": "gj",
+      "patient_id": 12,
+      "reg_date": "02/19/2023"
+    },
+    {
+      "Blood_Group": " B+",
+      "DOB": "02/20/2023",
+      "Email": "Afrin.om12@gmail.com",
+      "RFID": "166",
+      "address": "49/109 Attakulam Street kadayanallur",
+      "age": 0,
+      "contact_number": "7373532412",
+      "gender": "Female",
+      "name": "JAY",
+      "patient_id": 78,
+      "reg_date": "02/20/2023"
+    },
+    {
+      "Blood_Group": " B+",
+      "DOB": "02/17/2023",
+      "Email": "essakiraja246810@gmail.co",
+      "RFID": "1",
+      "address": "ruhr",
+      "age": 0,
+      "contact_number": "6234230312",
+      "gender": "Female",
+      "name": "aaa",
+      "patient_id": 100,
+      "reg_date": "02/20/2023"
+    }
+  ],
+  "prescription": {
+    "2": {
+      "Details": {
+        "1995": {
+          "count": 4
+        },
+        "2023-04-23": {
+          "amoxicillin": {
+            "Afternoon": "1",
+            "BF_AF": [
+              "BF"
+            ],
+            "Days": "4",
+            "Evening": "0",
+            "Morning": "0",
+            "Night": "0"
+          },
+          "aptiom": {
+            "Afternoon": "1",
+            "BF_AF": [
+              "BF"
+            ],
+            "Days": "3",
+            "Evening": "1",
+            "Morning": "1",
+            "Night": "0"
+          },
+          "ibuprofen": {
+            "Afternoon": "1",
+            "BF_AF": [
+              "BF"
+            ],
+            "Days": "2",
+            "Evening": "1",
+            "Morning": "0",
+            "Night": "0"
+          },
+          "paracetamol": {
+            "Afternoon": "0",
+            "BF_AF": [
+              "AF"
+            ],
+            "Days": "5",
+            "Evening": "1",
+            "Morning": "0",
+            "Night": "0"
+          }
+        },
+        "2023-04-24": {
+          "amoxicillin": {
+            "Afternoon": "1",
+            "BF_AF": [
+              "AF"
+            ],
+            "Days": "4",
+            "Evening": "1",
+            "Morning": "0",
+            "Night": "0",
+            "count": 6
+          },
+          "aptiom": {
+            "Afternoon": "0",
+            "BF_AF": [
+              "BF"
+            ],
+            "Days": "6",
+            "Evening": "0",
+            "Morning": "1",
+            "Night": "1",
+            "count": 12
+          },
+          "paracetamol": {
+            "Afternoon": "0.5",
+            "BF_AF": [
+              "BF"
+            ],
+            "Days": "3",
+            "Evening": "0",
+            "Morning": "1",
+            "Night": "0",
+            "count": 3
+          }
+        },
+        "2023-04-29": {
+          "amoxicillin": {
+            "Afternoon": "1",
+            "BF_AF": [
+              "BF"
+            ],
+            "Days": "2",
+            "Evening": "0",
+            "Morning": "0",
+            "Night": "0.5"
+          },
+          "aptiom": {
+            "Afternoon": "0",
+            "BF_AF": [
+              "AF"
+            ],
+            "Days": "1",
+            "Evening": "0",
+            "Morning": "1",
+            "Night": "0"
+          }
+        },
+        "2023-06-12": {
+          "Aptiom": {
+            "Afternoon": "0",
+            "BF_AF": [
+              "AF"
+            ],
+            "Days": "1",
+            "Evening": "0",
+            "Morning": "1",
+            "Night": "0",
+            "count": 1
+          },
+          "paracetamol": {
+            "Afternoon": "0",
+            "BF_AF": [
+              "BF"
+            ],
+            "Days": "3",
+            "Evening": "1",
+            "Morning": "1",
+            "Night": "0",
+            "count": 6
+          }
+        },
+        "Thu Jan 01 1970 05:30:01 GMT+0530 (India Standard Time)": {
+          "count": 4
+        },
+        "age": "20",
+        "gender": "Female",
+        "https:": {
+          "ho": {
+            "count": 6
+          }
+        },
+        "name": "priya"
+      }
+    },
+    "3": {
+      "Details": {
+        "1995": {
+          "count": 6
+        },
+        "2023-04-24": {
+          "amoxicillin": {
+            "Afternoon": "0.5",
+            "BF_AF": [
+              "BF"
+            ],
+            "Days": "2",
+            "Evening": "1",
+            "Morning": "0",
+            "Night": "1"
+          },
+          "aptiom": {
+            "Afternoon": "1",
+            "BF_AF": [
+              "AF"
+            ],
+            "Days": "3",
+            "Evening": "1",
+            "Morning": "0",
+            "Night": "1"
+          },
+          "paracetamol": {
+            "Afternoon": "1",
+            "BF_AF": [
+              "BF"
+            ],
+            "Days": "5",
+            "Evening": "0.5",
+            "Morning": "0.5",
+            "Night": "0"
+          }
+        },
+        "2023-05-08": {
+          "paracetamol": {
+            "Afternoon": "0",
+            "BF_AF": [
+              "AF"
+            ],
+            "Days": "7",
+            "Evening": "0",
+            "Morning": "1",
+            "Night": "0"
+          }
+        },
+        "Thu Jan 01 1970 05:30:01 GMT+0530 (India Standard Time)": {
+          "count": 6
+        },
+        "age": "0",
+        "gender": "Female",
+        "name": "gj"
+      }
+    },
+    "6": {
+      "Details": {
+        "2023-04-14": {
+          "paracetamol": {
+            "count": 0
+          }
+        }
+      }
+    },
+    "17": {
+      "Details": {
+        "prescription": {
+          "17": {
+            "Details": {
+              "2023-04-08": {
+                "Amoxicillin": {
+                  "Afternoon": "0",
+                  "Days": "4",
+                  "Evening": "0",
+                  "Morning": "0",
+                  "Night": "0",
+                  "medicine_name": "Amoxicillin"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "20": {
+      "Details": {
+        "2023-04-08": {
+          "patient_id": "20"
+        }
+      }
+    },
+    "23": {
+      "Details": {
+        "4": {
+          "19": {
+            "2023": [
+              null,
+              {
+                "afternoon": "3",
+                "bfAf": "6",
+                "days": "7",
+                "evening": "4",
+                "morning": "2",
+                "night": "5"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "75": {
+      "Details": {
+        "2023-04-15": {
+          "dolo": {
+            "check": "BF",
+            "medicine_name": "dolo",
+            "txtday": "3",
+            "txts1": "1",
+            "txts2": "1",
+            "txts3": "1",
+            "txts4": "0"
+          }
+        }
+      }
+    },
+    "100": {
+      "Details": {
+        "2023-03-28": {
+          "dolo": {
+            "Afternoon": "0",
+            "BF_AF": "BF",
+            "Days": "9",
+            "Evening": "1/2",
+            "Morning": "1/2",
+            "Night": "1/2",
+            "medicine_name": "dolo"
+          }
+        }
+      }
+    },
+    "101": {
+      "Details": {
+        "2023-04-04": {
+          "paracetamol": {
+            "Afternoon": "0",
+            "BF_AF": "BF",
+            "Days": "5",
+            "Evening": "1/2",
+            "Morning": "0",
+            "Night": "0",
+            "medicine_name": "paracetamol"
+          }
+        }
+      }
+    },
+    "111": {
+      "Details": {
+        "2023-04-06": {
+          "dolo": {
+            "Afternoon": "0",
+            "Days": "3",
+            "Evening": "0",
+            "Morning": "0",
+            "Night": "0",
+            "medicine_name": "dolo"
+          }
+        }
+      }
+    },
+    "114": {
+      "Details": {
+        "2023-04-14": {
+          "Afternoon": "0",
+          "Days": "3",
+          "Evening": "0",
+          "Morning": "0",
+          "Night": "0",
+          "medicine_name": ""
+        }
+      }
+    },
+    "200": {
+      "Details": {
+        "2023-04-06": {
+          "hjdkf": {
+            "Afternoon": "0",
+            "Days": "0",
+            "Evening": "0",
+            "Morning": "0",
+            "Night": "0",
+            "medicine_name": "hjdkf"
+          }
+        }
+      }
+    },
+    "237": {
+      "Details": {
+        "2023-04-15": {
+          "paracetamol": {
+            "check": "BF",
+            "medicine_name": "paracetamol",
+            "txtday": "3",
+            "txts1": "1",
+            "txts2": "0",
+            "txts3": "1/2",
+            "txts4": "1"
+          }
+        }
+      }
+    },
+    "004": {
+      "Details": {
+        "2023-04-06": {
+          "Amoxicillin": {
+            "Afternoon": "0",
+            "Days": "3",
+            "Evening": "0",
+            "Morning": "0",
+            "Night": "0",
+            "medicine_name": "Amoxicillin"
+          }
+        }
+      }
+    },
+    "06": {
+      "Details": {
+        "2023-04-14": {
+          "paracetamol": {
+            "Afternoon": "0",
+            "Days": "3",
+            "Evening": "0",
+            "Morning": "0",
+            "Night": "0",
+            "medicine_name": "paracetamol"
+          }
+        }
+      }
+    },
+    "Details": {
+      "2023-04-19": {
+        "Amoxicillin": {
+          "Afternoon": "0",
+          "BF_AF": "BF",
+          "Days": "3",
+          "Evening": "0",
+          "Morning": "1/2",
+          "Night": "0"
+        }
+      }
+    },
+    "F0FDE918": {
+      "Details": {
+        "2023-04-28": {
+          "paracetamol": {
+            "Afternoon": 0,
+            "BF_AF": "BF",
+            "Evening": 0,
+            "Morning": 1,
+            "Night": 1,
+            "count": 4,
+            "days": 2,
+            "price": 5
+          }
+        },
+        "age": 18,
+        "gender": "F",
+        "id": 3,
+        "name": "jas"
+      }
+    },
+    "orders": {
+      "-NRj8MTDl5OQFP7Zzxle": {
+        "amount": "46",
+        "email": "Af12@gmail.com",
+        "mobile": "07373567435",
+        "name": "Fathima",
+        "razorpay_order_id": "order_LXTkHmdNbOWJtw"
+      }
+      
+    }
+  }
+}
