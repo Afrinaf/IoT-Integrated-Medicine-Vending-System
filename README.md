@@ -1,4 +1,4 @@
-# -IoT-Integrated-Medicine-Vending-System
+# IoT-Integrated-Medicine-Vending-System
 
 ## Overview
 This project is an innovative IoT-based solution for dispensing prescription medications, providing a contactless, automated system for doctors, patients, and pharmacy integration. The system includes web interfaces for both doctors and patients, enabling real-time tracking and management of medical prescriptions, payments, and RFID tag-based identification for dispensing medication.
