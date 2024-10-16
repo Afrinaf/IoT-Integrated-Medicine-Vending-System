@@ -6,8 +6,8 @@
 
 #define SS_PIN 5
 #define RST_PIN 0
-const char* ssid = "Galaxy A53 5G";
-const char* password = "elitepro";
+const char* ssid = "";
+const char* password = "";
 
 MFRC522 mfrc522(SS_PIN, RST_PIN);
 
