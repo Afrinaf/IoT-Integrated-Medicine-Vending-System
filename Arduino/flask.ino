@@ -2,8 +2,8 @@
 #include <HTTPClient.h>
 #include <ArduinoJson.h>
 
-const char* ssid = "Galaxy A53 5G1A11";
-const char* password = "elitepro";
+const char* ssid = "";
+const char* password = "";
 const char* server_address = "http://127.0.0.1:5000";
 const char* endpoint_path = "/data";
 
