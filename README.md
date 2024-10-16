@@ -146,7 +146,7 @@ razorpay_client = razorpay.Client(auth=('YOUR_RAZORPAY_KEY', 'YOUR_RAZORPAY_SECR
 ### Components:
 - **ESP32**
 - **MFRC522 RFID Reader**
-- **Wi-Fi Enabled (SSID: Galaxy A53 5G1A11, Password: elitepro)**
+- **Wi-Fi Enabled (SSID: your device name, Password: your password )**
   
 ### Code:
 1. Install necessary libraries in your Arduino IDE:
