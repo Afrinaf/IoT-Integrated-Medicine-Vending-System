@@ -14,7 +14,7 @@ firebase_admin.initialize_app(cred, {
 })
 
 
-razorpay_client = razorpay.Client(auth=('rzp_test_H0KqHhdAvOGByu', 'FtTFmoJjTaFSMKx1FXWnZVlb'))
+razorpay_client = razorpay.Client(auth=('', ''))
 db_ref = db.reference("orders")
 db_ref = db.reference("prescription")
 
